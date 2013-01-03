@@ -1,0 +1,38 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "org.github.akiellor.sheet.Main"
+
+repositories {
+  mavenCentral()
+  
+  maven {
+    url "http://repository.gemjars.org/maven"
+  }
+
+  maven {
+    url "http://anonsvn.icesoft.org/repo/maven2/releases/"
+  }
+
+  maven {
+    url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
+  }
+
+  maven {
+    url "http://clojars.org/repo"
+  }
+}
+
+sourceSets {
+  main {
+    resources {
+      srcDir 'src/main/ruby'
+    }
+  }
+}
+
+dependencies {
+  compile 'org.javafunk.funk:funk:0.1.18'
+  compile 'net.sf:ghost4j:0.4.5'
+}
